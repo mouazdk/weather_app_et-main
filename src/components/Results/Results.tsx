@@ -3,6 +3,10 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import styles from "./result.module.css";
+import moment from "moment";
+// set the language to german for the moment library to display the date in german
+moment.locale("de");
+
 
 type ResultsProps = {
   results: {
@@ -28,7 +32,8 @@ export default function Results({ results }: ResultsProps) {
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIAW1nUtyRnsIRoo4ZwuW64Xb0RRsksSwVxsTstuBCegURqVw1WEDGl0sf2VpFgpmY298&usqp=CAUhttps://weatherextension.com/img/Weather%20Extension%20Logo.png"
         />
         <CardContent>
-          <Typography
+        <p>{moment().format('dddd')}, {moment().format('LL')}</p> 
+                  <Typography
             gutterBottom
             variant="h5"
             fontWeight={600}
