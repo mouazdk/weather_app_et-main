@@ -11,9 +11,9 @@ node_modules
 dist
 dist-ssr
 *.local
+api
 
 # Editor directories and files
-api/api_keys.ts
 .vscode/*
 !.vscode/extensions.json
 .idea
