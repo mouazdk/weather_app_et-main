@@ -11,8 +11,8 @@ export default function Form({ setCity, getWeather }: FormProps) {
     <form onSubmit={getWeather}>
         <TextField
           id="filled-search"
-          label="Search field"
-          placeholder="Enter city name"
+          label="Hier Stadt eingeben"
+          placeholder="Stadt"
           type="search"
           variant="filled"
           color='primary'
