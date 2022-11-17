@@ -1,6 +1,11 @@
 .resultcard {
     display: flex;
-    padding: 0 20px;
     margin-top: 3vw;
+    justify-content: center;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+}
+img {
+    background-color: white;
 }
 
