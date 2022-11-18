@@ -8,4 +8,3 @@ interface ResultModel {
 }
 
 export default ResultModel;
-
