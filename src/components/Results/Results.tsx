@@ -1,26 +1,18 @@
-import { CardMedia, textFieldClasses } from "@mui/material";
+import { CardMedia } from "@mui/material";
+import Paper from "@mui/material/Paper";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import styles from "./result.module.css";
 import moment from "moment";
-// set the language to german for the moment library to display the date in german
-moment.locale("de");
-
+import ResultModel from "../../model";
 
 type ResultsProps = {
-  results: {
-    cityName: string;
-    temperature: number;
-    feelsLike: number;
-    country: string;
-    description: string;
-    iconweather: string;
-  };
+  results: ResultModel;
 };
 
-// set sunset and sunrise as date data type and convert it to local time
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
+// TODO set sunset and sunrise as date data type and convert it to local time
+// ?  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
 
 export default function Results({ results }: ResultsProps) {
   return (
@@ -32,8 +24,12 @@ export default function Results({ results }: ResultsProps) {
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIAW1nUtyRnsIRoo4ZwuW64Xb0RRsksSwVxsTstuBCegURqVw1WEDGl0sf2VpFgpmY298&usqp=CAUhttps://weatherextension.com/img/Weather%20Extension%20Logo.png"
         />
         <CardContent>
-        <p>{moment().format('dddd')}, {moment().format('LL')}</p> 
-                  <Typography
+        <Paper elevation={3}> 
+            {moment().format("dddd")}
+        </Paper>
+          <h2>
+          </h2>
+          <Typography
             gutterBottom
             variant="h5"
             fontWeight={600}

@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
-import API_KEY from '../api/api_key';
+import API_KEY from '../api/api_secret';
+import ResultModel from '../model';
 
-
-type ResultsStateType = {
-    cityName: string;
-    temperature: number;
-    feelsLike: number;
-    country: string;
-    description: string;
-    iconweather: string;
-};
 
 export default function useResults() {
     const [city, setCity] = useState<string>("");
-    const [results, setResults] = useState<ResultsStateType>({
+    const [results, setResults] = useState<ResultModel>({
         cityName: "",
         temperature: 0,
         feelsLike: 0,
