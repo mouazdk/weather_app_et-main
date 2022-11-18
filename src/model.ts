@@ -1,10 +1,9 @@
-interface ResultModel {
+export interface ResultModel {
     cityName: string;
     temperature: number;
     feelsLike: number;
     country: string;
     description: string;
-    iconweather: string;
+    iconWeather: string;
+    date: string;
 }
-
-export default ResultModel;

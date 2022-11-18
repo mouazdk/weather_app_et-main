@@ -8,12 +8,13 @@ import useResults from "./hooks/useResults";
 // https://reactjs.org/docs/hooks-reference.html#usecallback
 
 export default function App() {
-  const { getWeather, results, setCity} = useResults();
+  const { getWeather, results, setCity } = useResults();
+  
   return (
     <div className="App">
       <Title />
-      <Form setCity={setCity} getWeather={getWeather} />
-      {results.cityName && <Results results={results} />}
+      <Form onChange={setCity} onSubmit={getWeather} label="City" placeholder="Enter your city here" />
+      {results && <Results results={results} />}
       
     </div>
   );

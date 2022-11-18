@@ -1,23 +1,29 @@
-import { TextField } from '@mui/material';
-import React from 'react';
+import { TextField } from "@mui/material";
+import React from "react";
 
 type FormProps = {
-  setCity: React.Dispatch<React.SetStateAction<string>>;
-  getWeather: (e: React.FormEvent<HTMLFormElement>) => void;
+  onChange: (city: string) => void;
+  onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+  label: string;
+  placeholder: string;
 };
 
-export default function Form({ setCity, getWeather }: FormProps) {
+export default function Form({
+  onChange,
+  onSubmit,
+  label,
+  placeholder,
+}: FormProps) {
   return (
-    <form onSubmit={getWeather}>
-        <TextField
-          id="filled-search"
-          label="Hier Stadt eingeben"
-          placeholder="Stadt"
-          type="search"
-          variant="filled"
-          color='primary'
-          onChange={(e) => setCity(e.target.value)}
-        />      
+    <form onSubmit={onSubmit}>
+      <TextField
+        label={label}
+        placeholder={placeholder}
+        type="search"
+        variant="filled"
+        color="primary"
+        onChange={(e) => onChange(e.target.value)}
+      />
       <button type="submit">Suchen</button>
     </form>
   );
