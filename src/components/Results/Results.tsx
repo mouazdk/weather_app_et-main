@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import styles from "./result.module.css";
 import moment from "moment";
-import ResultModel from "../../model";
+import { ResultModel } from "../../model";
 
 type ResultsProps = {
   results: ResultModel;
@@ -24,11 +24,9 @@ export default function Results({ results }: ResultsProps) {
           image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIAW1nUtyRnsIRoo4ZwuW64Xb0RRsksSwVxsTstuBCegURqVw1WEDGl0sf2VpFgpmY298&usqp=CAUhttps://weatherextension.com/img/Weather%20Extension%20Logo.png"
         />
         <CardContent>
-        <Paper elevation={3}> 
-            {moment().format("dddd")}
-        </Paper>
-          <h2>
-          </h2>
+          <Paper elevation={3}>
+            {new Date().toLocaleString("de", { weekday: "long" })}
+          </Paper>
           <Typography
             gutterBottom
             variant="h5"
@@ -39,7 +37,7 @@ export default function Results({ results }: ResultsProps) {
             {results.cityName}
           </Typography>
           <Typography variant="h6">
-            Tem­pe­ra­tur: {results.temperature} °C
+            Temperatur: {results.temperature} °C
           </Typography>
           <Typography variant="h6">Gefühlt: {results.feelsLike} °C</Typography>
           <Typography variant="h6">Land: {results.country}</Typography>
@@ -47,7 +45,7 @@ export default function Results({ results }: ResultsProps) {
             {results.description}
           </Typography>
           <img
-            src={`http://openweathermap.org/img/w/${results.iconweather}.png`}
+            src={`http://openweathermap.org/img/w/${results.iconWeather}.png`}
             alt="weather"
           />
         </CardContent>
